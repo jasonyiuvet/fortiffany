@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tiffany 🤍</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #faf7f2;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    color: #2a2118;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 32px 80px;
+  }
+
+  /* FOREWORD */
+  .foreword-section {
+    margin-bottom: 72px;
+    position: relative;
+  }
+
+  .foreword-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #b08d6a;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .foreword-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 44px 48px;
+    border: 1px solid #ede8e0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .foreword-card::before {
+    content: '\201C';
+    font-family: 'Playfair Display', serif;
+    font-size: 180px;
+    color: #f0e9de;
+    position: absolute;
+    top: -20px;
+    left: 24px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .foreword-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    line-height: 1.75;
+    color: #2a2118;
+    position: relative;
+    z-index: 1;
+  }
+
+  .foreword-text em {
+    color: #b08d6a;
+    font-style: italic;
+  }
+
+  .foreword-meta {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .foreword-line {
+    height: 1px;
+    flex: 1;
+    background: #ede8e0;
+  }
+
+  .foreword-date {
+    font-size: 12px;
+    color: #b08d6a;
+    letter-spacing: 0.08em;
+    font-weight: 400;
+  }
+
+  /* RX SECTION */
+  .rx-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rx-label {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #b08d6a;
+    font-weight: 500;
+    margin-bottom: 28px;
+    align-self: flex-start;
+  }
+
+  /* BOTTLE */
+  .bottle-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .bottle-wrapper:hover .bottle-body {
+    box-shadow: 0 12px 40px rgba(176,141,106,0.18);
+  }
+
+  .bottle-cap {
+    width: 72px;
+    height: 22px;
+    background: linear-gradient(180deg, #e8c97a 0%, #c8991e 100%);
+    border-radius: 8px 8px 0 0;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 -1px 0 #a07c10;
+  }
+
+  .bottle-neck {
+    width: 56px;
+    height: 14px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.15) 0%, transparent 40%, rgba(255,255,255,0.08) 100%),
+                rgba(224, 240, 232, 0.95);
+    border-left: 1px solid rgba(180,210,195,0.6);
+    border-right: 1px solid rgba(180,210,195,0.6);
+    position: relative;
+    z-index: 1;
+  }
+
+  .bottle-body {
+    width: 160px;
+    min-height: 220px;
+    background: linear-gradient(
+      120deg,
+      rgba(255,255,255,0.55) 0%,
+      rgba(224, 242, 234, 0.88) 30%,
+      rgba(200, 230, 218, 0.92) 60%,
+      rgba(224, 242, 234, 0.75) 100%
+    );
+    border-radius: 12px 12px 20px 20px;
+    border: 1px solid rgba(150,200,180,0.5);
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .bottle-shine {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 18px;
+    height: 70%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.1) 100%);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .bottle-shine-small {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    width: 7px;
+    height: 40%;
+    background: rgba(255,255,255,0.4);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  .bottle-label {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 10px 8px;
+    border: 1px solid #e0d8cc;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+    text-align: center;
+  }
+
+  .rx-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2a2118;
+    letter-spacing: 0.04em;
+  }
+
+  .rx-brand span {
+    color: #b08d6a;
+    font-style: italic;
+  }
+
+  .rx-divider {
+    height: 1px;
+    background: #ede8e0;
+    margin: 5px 0;
+  }
+
+  .rx-drug-name {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: #5a7a6a;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .rx-dosage {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: #2a2118;
+    margin: 2px 0;
+    font-weight: 400;
+  }
+
+  .rx-sub {
+    font-size: 8.5px;
+    color: #8a9a90;
+    letter-spacing: 0.04em;
+  }
+
+  .rx-patient {
+    font-size: 8px;
+    color: #aaa;
+    margin-top: 5px;
+    font-style: italic;
+  }
+
+  .pills-container {
+    position: absolute;
+    bottom: 14px;
+    left: 0; right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 14px;
+  }
+
+  .pill-static {
+    width: 22px;
+    height: 10px;
+    background: linear-gradient(135deg, #e8c97a, #c8991e);
+    border-radius: 5px;
+    opacity: 0.85;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+
+  .pill-static:nth-child(2) { background: linear-gradient(135deg, #f0a090, #d06050); transform: rotate(-12deg); }
+  .pill-static:nth-child(3) { background: linear-gradient(135deg, #90c8a0, #50987a); transform: rotate(8deg); }
+  .pill-static:nth-child(4) { background: linear-gradient(135deg, #a0b8e8, #6080c0); transform: rotate(-5deg); }
+  .pill-static:nth-child(5) { background: linear-gradient(135deg, #e8c97a, #c8991e); transform: rotate(15deg); }
+  .pill-static:nth-child(6) { background: linear-gradient(135deg, #c8a0d8, #9060b0); transform: rotate(-10deg); }
+  .pill-static:nth-child(7) { background: linear-gradient(135deg, #f0a090, #d06050); transform: rotate(3deg); }
+  .pill-static:nth-child(8) { background: linear-gradient(135deg, #90c8a0, #50987a); transform: rotate(-18deg); }
+
+  .tap-hint {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #b08d6a;
+    letter-spacing: 0.06em;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tap-hint::before, .tap-hint::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: #d4c0a8;
+  }
+
+  /* SHAKE */
+  @keyframes shake {
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(-8deg) translateY(-2px); }
+    20%  { transform: rotate(8deg) translateY(-4px); }
+    30%  { transform: rotate(-6deg) translateY(-2px); }
+    40%  { transform: rotate(6deg) translateY(-1px); }
+    50%  { transform: rotate(-4deg); }
+    60%  { transform: rotate(4deg); }
+    70%  { transform: rotate(-2deg); }
+    80%  { transform: rotate(2deg); }
+    90%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .shaking {
+    animation: shake 0.65s ease-in-out;
+  }
+
+  /* DISPENSED */
+  .dispensed-area {
+    min-height: 120px;
+    width: 100%;
+    max-width: 440px;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .dispensed-pill {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #ede8e0;
+    border-radius: 40px;
+    padding: 7px 18px 7px 10px;
+    box-shadow: 0 4px 20px rgba(176,141,106,0.13);
+    animation: pillDrop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+  }
+
+  @keyframes pillDrop {
+    from { opacity: 0; transform: translateY(-18px) scale(0.85); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .dispensed-pill-icon {
+    width: 28px;
+    height: 14px;
+    background: linear-gradient(135deg, #e8c97a, #c8991e);
+    border-radius: 7px;
+    flex-shrink: 0;
+  }
+
+  .dispensed-pill-text {
+    font-size: 11px;
+    font-weight: 500;
+    color: #8a7560;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .quote-card {
+    display: none;
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px 32px;
+    border: 1px solid #ede8e0;
+    text-align: center;
+    max-width: 440px;
+    width: 100%;
+    animation: fadeUp 0.45s ease 0.2s both;
+    box-shadow: 0 8px 32px rgba(176,141,106,0.10);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .quote-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #2a2118;
+    font-style: italic;
+  }
+
+  .quote-dose {
+    margin-top: 16px;
+    font-size: 11px;
+    color: #b08d6a;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- FOREWORD -->
+  <div class="foreword-section">
+    <p class="foreword-label">A note for you</p>
+    <div class="foreword-card">
+      <div class="foreword-text">
+        I am <em>extremely proud of you</em> for pushing through everything and not letting anything or anyone get in your way through vet school. You are an extremely hardworking and kind person. Don't let anyone tell you anything else.<br><br>
+        Challenges and difficulties are a given, especially for such a hard degree. Push through — <em>you are halfway there</em>, you got this!
+      </div>
+      <div class="foreword-meta">
+        <div class="foreword-line"></div>
+        <span class="foreword-date">23 May, 2026</span>
+        <div class="foreword-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RX -->
+  <div class="rx-section">
+    <p class="rx-label">Your prescription</p>
+
+    <div class="bottle-wrapper" id="bottle" onclick="dispense()">
+      <div class="bottle-cap"></div>
+      <div class="bottle-neck"></div>
+      <div class="bottle-body" id="bottleBody">
+        <div class="bottle-shine"></div>
+        <div class="bottle-shine-small"></div>
+        <div class="bottle-label">
+          <div class="rx-brand">Tiff<span>Rx</span></div>
+          <div class="rx-divider"></div>
+          <div class="rx-drug-name">Motivation</div>
+          <div class="rx-dosage">10mg</div>
+          <div class="rx-sub">per shake · as needed</div>
+          <div class="rx-patient">For: Tiffany 🤍</div>
+        </div>
+        <div class="pills-container">
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+          <div class="pill-static"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="tap-hint">tap the bottle</p>
+
+    <div class="dispensed-area">
+      <div class="dispensed-pill" id="dispensedPill">
+        <div class="dispensed-pill-icon"></div>
+        <span class="dispensed-pill-text">10mg · Motivation</span>
+      </div>
+      <div class="quote-card" id="quoteCard">
+        <div class="quote-text" id="quoteText"></div>
+        <div class="quote-dose">Daily dose dispensed ✦</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const quotes = [
+  "I am in my \"I don't know how, but I will\" era.",
+  "It is hard because it is new. Not because you can't do it.",
+  "Doubt kills more dreams than failure ever will.",
+  "Ships don't sink because of the water around them. Ships sink because of the water that gets IN them. Don't let what's happening around you weigh you down.",
+  "Everything is a win when the goal is experience.",
+  "Don't downgrade your dreams to match your reality. Upgrade your faith to match your vision.",
+  "If you fail, congratulations — most people don't even try.",
+  "Come on kid, this is your dream.",
+  "Major cheat code in life: ask for the big unreasonable thing. The universe meets you at your level of audacity.",
+  "Revise till you're excited for the exam.",
+  "What you do in private, shows in public. Your discipline shows in your confidence. Your focus shows in your results.",
+  "Focus on improving, not proving.",
+  "The cold water does not get warmer if you jump late.",
+  "It won't happen overnight. But if you quit, it won't happen at all.",
+  "Pressure is a privilege. It means things are expected of you.",
+  "It is on you, to get you, where you want to be.",
+  "Discipline is how you say \"I love you\" to yourself.",
+  "Your effort matters even when results are slow.",
+  "Being ready is not a myth. You start. You suck. You figure it out. You get better.",
+  "If you get tired, learn to rest, not to quit.",
+  "Of course it's hard. If it were easy, everyone would do it. Hard is what makes it great.",
+  "You're gonna figure it out, like you always have.",
+  "Never back down, never give up.",
+  "Arise. You have cried enough. What is coming brings light.",
+  "Yes, you can still catch up.",
+  "Never be a prisoner of your past. It was just a lesson, not a life sentence.",
+  "It's never too late to start over. Don't stay stuck — do better.",
+  "Study while others are sleeping, so you can live while others are dreaming.",
+  "Have some fucking confidence in what you are doing.",
+  "No matter how you feel — get up, dress up, show up, never give up.",
+  "Imagine how incredible you'd be one year from now if you stopped fantasising and actively started building.",
+];
+
+let lastIndex = -1;
+let shaking = false;
+
+function dispense() {
+  if (shaking) return;
+  shaking = true;
+
+  const bottle = document.getElementById('bottle');
+  bottle.classList.add('shaking');
+
+  const pill = document.getElementById('dispensedPill');
+  const card = document.getElementById('quoteCard');
+  pill.style.display = 'none';
+  card.style.display = 'none';
+
+  setTimeout(() => {
+    let idx;
+    do { idx = Math.floor(Math.random() * quotes.length); } while (idx === lastIndex);
+    lastIndex = idx;
+
+    pill.style.display = 'flex';
+    void pill.offsetWidth;
+
+    setTimeout(() => {
+      document.getElementById('quoteText').textContent = quotes[idx];
+      card.style.display = 'block';
+      void card.offsetWidth;
+    }, 280);
+
+    bottle.classList.remove('shaking');
+    shaking = false;
+  }, 650);
+}
+</script>
+</body>
+</html>
